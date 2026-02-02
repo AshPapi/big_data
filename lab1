@@ -137,8 +137,6 @@ def compare_solutions():
             print(f"Файл {filename} не найден!")
 
 
-print(compare_solutions())
-
 def measure_memory_usage(solution_func, filename):
     """Измерение потребления памяти"""
     tracemalloc.start()
@@ -151,4 +149,8 @@ def measure_memory_usage(solution_func, filename):
     return result, execution_time, peak / 1024 / 1024  # MB
 
 
+print(measure_memory_usage(naive_solution, 'access_small.log'))
+print(measure_memory_usage(naive_solution, 'access.log'))
+
 print(measure_memory_usage(mapreduce_solution, 'access_small.log'))
+print(measure_memory_usage(mapreduce_solution, 'access.log'))
